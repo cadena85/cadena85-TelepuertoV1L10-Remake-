@@ -1,0 +1,56 @@
+2020-03-15 21:04:17: ----- Tarea 'telepuerto1': ANÁLISIS comenzado por User en ordenador 'DESKTOP-NBDODEA' (GoodSync v 9.4.9.9) -----
+2020-03-15 21:04:17: ~StringMX\Desktop\Nueva carpeta\public\js (C:\Users\StringMX\Desktop\Nueva carpeta\public\js) <-> C:\xampp\htdocs\telepuerto\public\js
+2020-03-15 21:04:17: izquierda: State file does not exist: C:\Users\StringMX\Desktop\Nueva carpeta\public\js\_gsdata_\_file_state._gs
+2020-03-15 21:04:17: Construir nuevo archivo de estado en izquierda
+2020-03-15 21:04:17: izquierda: Archivos: 14 (excluidos 0). Carpetas: 2 (excluidas 0). C: NTFS, Libre: 221 GB, Total: 465 GB
+2020-03-15 21:04:17: derecha: State file does not exist: C:\xampp\htdocs\telepuerto\public\js\_gsdata_\_file_state._gs
+2020-03-15 21:04:17: Construir nuevo archivo de estado en derecha
+2020-03-15 21:04:17: derecha: Archivos: 13 (excluidos 0). Carpetas: 2 (excluidas 0). C: NTFS, Libre: 221 GB, Total: 465 GB
+2020-03-15 21:04:17: /app.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /bootstrap-toggle.min.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /bootstrap.min.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /jquery-3.4.1.min.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /sensores/altitud.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /sensores/sensorscore.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /socket.io.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /tablero/application.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: /xbee-api-basic.js: Conflicto: Archivos nuevos que son diferentes
+2020-03-15 21:04:17: Análisis completado con Conflictos. Resuelva los Conflictos seleccionando la dirección de sincronización adecuada y luego haga clic para sincronizar
+2020-03-15 21:04:17: Cambios: 10, Conflictos: 9, TiempoCopia: 0, EstadoCopia: 0/6, Errores: 0
+2020-03-15 21:04:17: Left to Right: Copy File: 1 
+2020-03-15 21:04:17: ----- Análisis Completado. Tiempo 00:00:00, Velocidad: Many archivo/s -----
+2020-03-15 21:04:17: 
+2020-03-15 21:04:26: New _gsdata_ folder(s) created, so rescan all job folders for their ghosts
+2020-03-15 21:04:26: ===== Tarea 'telepuerto1': SINC comenzada por User en ordenador 'DESKTOP-NBDODEA' =====
+2020-03-15 21:04:26: ~StringMX\Desktop\Nueva carpeta\public\js (C:\Users\StringMX\Desktop\Nueva carpeta\public\js) <-> C:\xampp\htdocs\telepuerto\public\js
+2020-03-15 21:04:27: /app.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: /bootstrap-toggle.min.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: /bootstrap.min.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: /jquery-3.4.1.min.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: /sensores/altitud.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: Copiar Nueva 'C:\Users\StringMX\Desktop\Nueva carpeta\public\js\sensores\script_chart_timeReal.js' -> 'C:\xampp\htdocs\telepuerto\public\js\sensores\script_chart_timeReal.js'
+2020-03-15 21:04:27: /sensores/sensorscore.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: /socket.io.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: /tablero/application.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: /xbee-api-basic.js: unresolved conflict results in No Copy
+2020-03-15 21:04:27: Sinc. completada con 9 conflictos sin resolver. Haga clic en el botón Conflictos para ver los confilctos no resueltos
+2020-03-15 21:04:27: Elementos Sincronizados OK: 7, Errores: 0
+2020-03-15 21:04:27: ===== Sinc. Completa. Tiempo: 00:00:01, Velocidad: 9.41 KB/s (250 KB/s) =====
+2020-03-15 21:04:27: 
+2020-03-15 21:09:26: === User Changed Action from 'CONFLICT' to 'COPY_LEFT_TO_RIGHT' on item /sensores/sensorscore.js
+2020-03-15 21:09:26: Done.
+2020-03-15 21:09:30: ===== Tarea 'telepuerto1': SINC comenzada por User en ordenador 'DESKTOP-NBDODEA' =====
+2020-03-15 21:09:30: ~StringMX\Desktop\Nueva carpeta\public\js (C:\Users\StringMX\Desktop\Nueva carpeta\public\js) <-> C:\xampp\htdocs\telepuerto\public\js
+2020-03-15 21:09:30: /app.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: /bootstrap-toggle.min.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: /bootstrap.min.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: /jquery-3.4.1.min.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: /sensores/altitud.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: Copiar Sobre 'C:\Users\StringMX\Desktop\Nueva carpeta\public\js\sensores\sensorscore.js' -> 'C:\xampp\htdocs\telepuerto\public\js\sensores\sensorscore.js' (User Action)
+2020-03-15 21:09:30: /socket.io.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: /tablero/application.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: /xbee-api-basic.js: unresolved conflict results in No Copy
+2020-03-15 21:09:30: Sinc. completada con 8 conflictos sin resolver. Haga clic en el botón Conflictos para ver los confilctos no resueltos
+2020-03-15 21:09:30: Elementos Sincronizados OK: 1, Errores: 0
+2020-03-15 21:09:30: ===== Sinc. Completa. Tiempo: 00:00:00, Velocidad: 9.41 KB/s (250 KB/s) =====
+2020-03-15 21:09:30: 

@@ -1,0 +1,49 @@
+.chart {
+width: 100%;
+min-height: 450px;
+}
+#cardbodyimg{
+		background-image:url("http://localhost/telepuerto/public/image/geolocalizacion-android1.gif");
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	/*-webkit-filter: blur(0.1rem);
+	  -moz-filter: blur(0.1rem);
+	  -o-filter: blur(0.1rem);
+	  -ms-filter: blur(0.1rem);*/
+	  filter: blur(0.2rem);
+	  
+}
+#formControlTextarea {
+ 	background: none;
+	
+	position: absolute;
+    left:0;
+    top: 0;
+
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: -0.8px;
+	word-spacing: -5px;
+	color: rgb(255, 255, 255);	
+	font-weight: 700;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+
+	height: 100%; 
+	resize: none;
+	text-shadow: 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206,89,55,0);
+	overflow:hidden; /*Remove scrollbars from textarea*/
+}
+
+#textgps{
+	font-size: calc(1.4vw + 0.1vh);
+	width: 100%;
+	position: relative;
+	display:flex;
+	display:inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding: 1rem;
+	top:25%;
+	line-height: 2.0; /*esta es la propiedad para el interlineado*/
+}

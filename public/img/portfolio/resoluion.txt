@@ -1,0 +1,2 @@
+thumbnail = 400x300
+full = 700x933

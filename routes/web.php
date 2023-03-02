@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\formularioController;
+use App\Http\Controllers\soapController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ Route::get('/', function () {
 });
 //Recuerda el use al inicio para que encuentre al controlador
 //Ejemplo: use App\Http\Controllers\formularioController;
-Route::get('/productos/mostrar', [formularioController::class, 'index']);//Recuerda el use al inici
+Route::get('/productos', [formularioController::class, 'index']);//Recuerda el use al inici
 Route::get('/form', [formularioController::class, 'create']);
 Route::post('/form/save', [formularioController::class, 'store'])->name('producto.guardar');
+Route::get('/servicio/soap', [soapController::class, 'consumirServicio']);//Recuerda el use al inici

@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\formularioController;
 use App\Http\Controllers\soapController;
+use App\Http\Controllers\servidorSOAPController;
+
+use App\Http\Controllers\clienteTemperaturaSOAPController;
+use App\Http\Controllers\servidorTemperaturaSOAPController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +26,8 @@ Route::get('/', function () {
 Route::get('/productos', [formularioController::class, 'index']);//Recuerda el use al inici
 Route::get('/form', [formularioController::class, 'create']);
 Route::post('/form/save', [formularioController::class, 'store'])->name('producto.guardar');
-Route::get('/servicio/soap', [soapController::class, 'consumirServicio']);//Recuerda el use al inici
+
+Route::get('/servicio/sumar', [soapController::class, 'consumirServicio']);//Recuerda el use al inici
+
+Route::get('/servidor/temperatura', [servidorTemperaturaSOAPController::class, 'iniciar']);
+Route::get('/cliente/temp', [clienteTemperaturaSOAPController::class, 'consumirTemperatura']);

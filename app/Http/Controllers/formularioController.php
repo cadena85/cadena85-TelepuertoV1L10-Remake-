@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class formularioController extends Controller
 {
+    function celsiusToFahrenheit($celsius) {
+        $fahrenheit = $celsius * 9 / 5 + 32;
+
+        return $fahrenheit;
+    }
+    
     /**
      * Display a listing of the resource.
      */

@@ -15,7 +15,8 @@ class soapController extends Controller
         libxml_disable_entity_loader(false);
 
     	$client = new SoapClient("https://www.crcind.com/csp/samples/SOAP.Demo.CLS?WSDL=1");
-	    $functions = $client->__getFunctions();
+        //dd($client);
+	    //$functions = $client->__getFunctions();
             //dd($functions);
        // Define los parámetros de la solicitud
         $params = array(
@@ -26,7 +27,7 @@ class soapController extends Controller
 // Llamar a la función AddInteger del cliente SOAP, pasando el objeto de la clase AddInteger como parámetro
         $resultado = $client->AddInteger($params);
         //dd($resultado);
-        //$resultado = $client->AddInteger();
+        //$resultado = $client->AddInteger(); var_dump ($resultado); // esto lo agegue para visualizar la respuesta
 	    echo "El resultado de la suma es: " . $resultado->AddIntegerResult;
     }
 }

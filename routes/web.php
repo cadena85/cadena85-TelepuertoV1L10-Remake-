@@ -17,7 +17,6 @@ use App\Http\Controllers\servidorTemperaturaSOAPController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,4 +29,4 @@ Route::post('/form/save', [formularioController::class, 'store'])->name('product
 Route::get('/servicio/sumar', [soapController::class, 'consumirServicio']);//Recuerda el use al inici
 
 Route::get('/servidor/temperatura', [servidorTemperaturaSOAPController::class, 'iniciar']);
-Route::get('/cliente/temp', [clienteTemperaturaSOAPController::class, 'consumirTemperatura']);
+Route::get('/cliente/temperatura', [clienteTemperaturaSOAPController::class, 'consumirTemperatura']);

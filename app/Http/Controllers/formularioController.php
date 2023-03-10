@@ -39,6 +39,8 @@ class formularioController extends Controller
     public function store(Request $request)
     {
         //
+
+        dd($request);
         $producto = new Producto;//use App\Models\Producto;
         $producto->vehiculo = $request->vehiculo; 
         $producto->save();

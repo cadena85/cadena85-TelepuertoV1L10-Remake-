@@ -26,7 +26,7 @@ Route::get('/productos', [formularioController::class, 'index']);//Recuerda el u
 Route::get('/form', [formularioController::class, 'create']);
 Route::post('/form/save', [formularioController::class, 'store'])->name('producto.guardar');
 
-Route::get('/servicio/sumar', [soapController::class, 'consumirServicio']);//Recuerda el use al inici
+Route::get('/consumo/crcind/demo', [soapController::class, 'consumirServicio']);//Recuerda el use al inici
 
 
 Route::get('/cliente/temperatura', [clienteTemperaturaSOAPController::class, 'consumirTemperatura']);
@@ -36,6 +36,5 @@ Route::any('/servidor/temperatura', function() {
     $soapServer = new SoapServer('http://127.0.0.1/misServiciosSOAP/ctof.wsdl', array('uri' => 'http://localhost/telepuertoV1L10/public/servidor/temperatura'));
     $soapServer->setClass(servidorTemperaturaSOAPController::class);
     $soapServer->handle();
-
 });
 //Route::get('/servidor/temperatura', [servidorTemperaturaSOAPController::class, 'iniciar']);

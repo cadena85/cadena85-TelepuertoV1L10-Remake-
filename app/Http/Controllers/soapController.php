@@ -49,5 +49,48 @@ class soapController extends Controller
             // now the CDATA is revealed magically.
 
         }
+		 /*$parametros= array(            
+            'name' => "Brown",
+        );*/
+        $parametros= array(            
+            'name' => "Xochitl",
+        );
+        $resultado = $cliente->GetByName($parametros);
+        $xml=$resultado->GetByNameResult->any;
+        $arreglo=simplexml_load_string($xml);
+        //dd($arreglo);
+        //dd($arregloDataSet->ListByName);
+        //dd(count($arregloDataSet->ListByName->SQL));
+        $dataSet=$arreglo->ListByName->SQL;
+        if(count($dataSet)>0){
+            foreach($dataSet as $i=> $data){
+                //dd($data);
+                echo "<br>ID:".$data->ID;    
+            }
+        }
+        $parametros= array(            
+            'id' => 5,
+        );
+        $resultado = $cliente->FindPerson($parametros);
+        //dd($resultado);
+        $datos = $resultado->FindPersonResult;
+        //dd($datos);
+        $NumeroElementos =  count((array) $datos);
+        //dd($NumeroElementos);
+        $array = (array) $datos;
+        //dd($array);
+        foreach ($array as $key => $value) {
+            // code...
+            if(is_string($value) || is_numeric($value))
+                echo "<br>". $key . ": ". $value;
+            else{
+                echo "<br> ---".$key;
+                 foreach ($value as $k => $val) {
+                    // code...
+                    echo "<br>". $k . ": ". $val;
+                } 
+            }
+              
+        }
     }
 }

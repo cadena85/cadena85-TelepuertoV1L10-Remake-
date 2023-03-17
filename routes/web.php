@@ -7,6 +7,8 @@ use App\Http\Controllers\servidorSOAPController;
 
 use App\Http\Controllers\clienteTemperaturaSOAPController;
 use App\Http\Controllers\servidorTemperaturaSOAPController;
+use App\Http\Controllers\pySOAPController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,9 +34,9 @@ Route::get('/consumo/crcind/demo', [soapController::class, 'consumirServicio']);
 Route::get('/cliente/temperatura', [clienteTemperaturaSOAPController::class, 'consumirTemperatura']);
 
 Route::any('/servidor/temperatura', function() {
-    $this->middleware('verifyCsrfToken'); 
+    //$this->middleware('verifyCsrfToken'); 
     $soapServer = new SoapServer('http://127.0.0.1/misServiciosSOAP/ctof.wsdl', array('uri' => 'http://localhost/telepuertoV1L10/public/servidor/temperatura'));
     $soapServer->setClass(servidorTemperaturaSOAPController::class);
     $soapServer->handle();
 });
-//Route::get('/servidor/temperatura', [servidorTemperaturaSOAPController::class, 'iniciar']);
+Route::get('/cliente/py', [pySOAPController::class, 'consumirServicioPy']);

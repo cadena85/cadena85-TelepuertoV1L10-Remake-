@@ -8,6 +8,7 @@ use App\Http\Controllers\servidorSOAPController;
 use App\Http\Controllers\clienteTemperaturaSOAPController;
 use App\Http\Controllers\servidorTemperaturaSOAPController;
 use App\Http\Controllers\pySOAPController;
+use App\Http\Controllers\creadorWSDL;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,6 @@ Route::post('/form/save', [formularioController::class, 'store'])->name('product
 
 Route::get('/consumo/crcind/demo', [soapController::class, 'consumirServicio']);//Recuerda el use al inici
 
-
 Route::get('/cliente/temperatura', [clienteTemperaturaSOAPController::class, 'consumirTemperatura']);
 
 Route::any('/servidor/temperatura', function() {
@@ -40,3 +40,4 @@ Route::any('/servidor/temperatura', function() {
     $soapServer->handle();
 });
 Route::get('/cliente/py', [pySOAPController::class, 'consumirServicioPy']);
+Route::get('/crer/wsdl/ajua', [creadorWSDL::class, 'crearWSDL']);

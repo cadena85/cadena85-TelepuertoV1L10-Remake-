@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers;
@@ -8,7 +9,7 @@ class pySOAPController extends Controller
 {
     //
      public function consumirServicioPy(){
-        $client = new SoapClient("http://localhost:8000/?wsdl");
+        $client = new SoapClient("http://localhost:8000?wsdl");
         //dd($client);
         $params = array(
             'name' => "Rob Paper Sheet",

@@ -9,6 +9,7 @@ use App\Http\Controllers\clienteTemperaturaSOAPController;
 use App\Http\Controllers\servidorTemperaturaSOAPController;
 use App\Http\Controllers\pySOAPController;
 use App\Http\Controllers\creadorWSDL;
+use App\Http\Controllers\consumoRestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,5 @@ Route::any('/servidor/temperatura', function() {
 });
 Route::get('/cliente/py', [pySOAPController::class, 'consumirServicioPy']);
 Route::get('/crer/wsdl/ajua', [creadorWSDL::class, 'crearWSDL']);
+//Consumo REST
+Route::get('/consumir/pokemones', [consumoRestController::class, 'index']);

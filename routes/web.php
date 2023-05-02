@@ -43,4 +43,5 @@ Route::any('/servidor/temperatura', function() {
 Route::get('/cliente/py', [pySOAPController::class, 'consumirServicioPy']);
 Route::get('/crer/wsdl/ajua', [creadorWSDL::class, 'crearWSDL']);
 //Consumo REST
-Route::get('/consumir/gatos', [consumoRestController::class, 'index']);
+Route::get('/gatos/aletorios', [consumoRestController::class, 'index'])->name('aletorios');;
+Route::get('/gatos/favoritos', [consumoRestController::class, 'favoritos'])->name('album');;

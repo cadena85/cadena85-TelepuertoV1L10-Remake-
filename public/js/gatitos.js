@@ -22,23 +22,26 @@ async function loadFavouriteCats() {
             //img2.src = data[0].url;
             img3.src = data[1].image.url;*/
             const row = document.getElementById('gatosFavoritos');
-            row.innerHTML="";//InnerHTML es una propiedad que nos permite leer un dato o asignarlo al contenido
-
+            row.innerHTML = ""; //InnerHTML es una propiedad que nos permite leer un dato o asignarlo al contenido
             data.forEach(gato => {
                 //nodos de HTML
                 //const row = document.getElementById('gatosFavoritos');
                 var col = document.createElement('div');
+                var cardShadow = document.createElement('div');
                 const img = document.createElement('img');
                 const btn = document.createElement('button');
                 const btnTexto = document.createTextNode('Eliminar gato');
                 img.src = gato.image.url;
+                img.style.width = '100%';//antes-->img.width
                 btn.appendChild(btnTexto);
-                btn.onclick = () => borrarGatoFavorito(gato.id);//gato.image_id (no usar)
-                col.appendChild(img);
-                col.appendChild(btn);
+                btn.onclick = () => borrarGatoFavorito(gato.id); //gato.image_id (no usar)
+                col.appendChild(cardShadow);
+                cardShadow.appendChild(img);
+                cardShadow.appendChild(btn);
                 row.appendChild(col);
-                col.classList.add("col-6");
-                col.classList.add("col-sm-4");
+                col.classList.add("col");
+                btn.classList.add("btn", 'btn-sm', 'btn-outline-secondary');
+                cardShadow.classList.add("card", "shadow-sm");
                 //gato.image.url;
             });
         }
@@ -46,34 +49,62 @@ async function loadFavouriteCats() {
         console.error(e);
     }
 }
-async function cargarGatos() {    
+async function cargarUltimosGatosFavoritos() {
+    console.log("Ultimos gatos Favoritos agregados ...");
+    const respuesta = await fetch(API_URL_Favourites);
+    if (!respuesta.ok) {
+        if (respuesta.status !== 200) {
+            errorApi.innerHTML = "hubo un error: " + respuesta.status; // reemplaza la sintaxis HTML del elemento por la nueva.          
+        }
+    } else {
+        const data = await respuesta.json();        
+        var j=7;
+        for (var i = data.length - 1; i >= (data.length - 3); i--) {
+            //console.log( data[i].image.url);
+            var img = document.getElementById('img'+j);
+            img.src = data[i].image.url
+            j++;
+        }
+    }
+}
+async function cargarGatos(){
     try {
         const respuesta = await fetch(API_URL);
         if (respuesta.status !== 200) {
             errorApi.innerHTML = "hubo un error: " + respuesta.status; // reemplaza la sintaxis HTML del elemento por la nueva.          
+        } else {
+            const datos = await respuesta.json();
+            console.log("Gatos cargados: ");
+            console.log(datos);
+            const img1 = document.getElementById('img1');
+            const img2 = document.getElementById('img2');
+            const img3 = document.getElementById('img3');
+            const img4 = document.getElementById('img4');
+            const img5 = document.getElementById('img5');
+            const img6 = document.getElementById('img6');
+            const btn1 = document.getElementById('btn1');
+            const btn2 = document.getElementById('btn2');
+            const btn3 = document.getElementById('btn3');
+            img1.src = datos[0].url;
+            img2.src = datos[1].url;
+            img3.src = datos[2].url;
+            img4.src = datos[0].url;
+            img5.src = datos[1].url;
+            img6.src = datos[2].url;
+            btn1.onclick = () => guardarGatoFavorito(datos[0].id);
+            btn2.onclick = function() {
+                guardarGatoFavorito(datos[1].id);
+            };
+            btn3.onclick = function() {
+                guardarGatoFavorito(datos[2].id);
+            };
         }
-        const datos = await respuesta.json();
-        console.log("gatos cargados: ");
-        console.log(datos);
-        const img1 = document.getElementById('img1');
-        const img2 = document.getElementById('img2');
-        const img3 = document.getElementById('img3');
-        const btn1 = document.getElementById('btn1');
-        const btn2 = document.getElementById('btn2');
-        const btn3 = document.getElementById('btn3');
-        img1.src = datos[0].url;
-        img2.src = datos[1].url;
-        img3.src = datos[2].url;
-        btn1.onclick= () => guardarGatoFavorito(datos[0].id); 
-        btn2.onclick= function() {guardarGatoFavorito(datos[1].id); };
-        btn3.onclick= function() {guardarGatoFavorito(datos[2].id); };
-
         //img3.src = datos[1].url;   
     } catch (e) {
         console.error(e);
     }
     //document.getElementById("container").innerHTML = JSON.parse(JSON.stringify(datos[0]));
-}//fin cargarGatos
+} //fin cargarGatos
 //async function guardarGatoFavorito() 
 async function guardarGatoFavorito(idGato) {
     var rawBody = JSON.stringify({
@@ -91,25 +122,36 @@ async function guardarGatoFavorito(idGato) {
     console.log(favourites);
     if (response.status !== 200) {
         errorApi.innerHTML = "hubo un error: " + respuesta.status; // reemplaza la sintaxis HTML del elemento por la nueva.          
-    }else{
+    } else {
         console.log("gato guardado!");
-        loadFavouriteCats();
+        cargarUltimosGatosFavoritos();
+        cargarGatos();
     }
 }
-async function borrarGatoFavorito(idGato) {  
+async function borrarGatoFavorito(idGato) {
     const favouriteId = "id-of-favourite-to-delete"
     var requestOptions = {
-        method: 'DELETE',        
+        method: 'DELETE',
     };
-    const ruta= API_URL_Delete_Favourites+idGato+'?api_key=' + DATA_API_KEY;
+    const ruta = API_URL_Delete_Favourites + idGato + '?api_key=' + DATA_API_KEY;
     const response = await fetch(ruta, requestOptions);
-    
     if (response.status !== 200) {
         errorApi.innerHTML = "hubo un error: " + response.status; // reemplaza la sintaxis HTML del elemento por la nueva.          
-    }else{
+    } else {
         console.log("gato eliminado!");
-        loadFavouriteCats();//primero aqui
-    }    
+        loadFavouriteCats(); //primero aqui
+    }
 }
-loadFavouriteCats();
-cargarGatos();
+//console.log(window.location.pathname);
+var cadena = ""+window.location.pathname;
+var palabra = "aletorios";
+
+var index = cadena.indexOf(palabra);
+
+if(index >= 0) {
+    cargarGatos();
+    cargarUltimosGatosFavoritos();
+} else {//la palabra no existe dentro de la cadena
+   loadFavouriteCats();
+}
+

@@ -12,4 +12,9 @@ class consumoRestController extends Controller
         
         return view("testPage");
     }
+    public function favoritos()
+    {
+        
+        return view("favoritos");
+    }
 }

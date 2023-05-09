@@ -129,7 +129,7 @@ async function guardarGatoFavorito(idGato) {
     }
 }
 async function borrarGatoFavorito(idGato) {
-    const favouriteId = "id-of-favourite-to-delete"
+   
     var requestOptions = {
         method: 'DELETE',
     };

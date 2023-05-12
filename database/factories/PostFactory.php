@@ -19,7 +19,7 @@ class PostFactory extends Factory
         return [
             //
             'user_id' => rand(1,10),//con 10 usarios
-            'title' => $this->faker->sentence,//oracion al azar
+            'titulo' => $this->faker->sentence,//oracion al azar
             'slug' => $this->faker->slug,
             'contenido' => $this->faker->text(500),//texto de 500 caracteres
         ];

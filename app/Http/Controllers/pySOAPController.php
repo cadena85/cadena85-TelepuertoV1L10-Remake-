@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -8,6 +7,7 @@ use SoapClient;
 class pySOAPController extends Controller
 {
     //
+    
      public function consumirServicioPy(){
         $client = new SoapClient("http://localhost:8000?wsdl");
         //dd($client);

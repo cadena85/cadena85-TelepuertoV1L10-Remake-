@@ -10,6 +10,7 @@ use App\Http\Controllers\servidorTemperaturaSOAPController;
 use App\Http\Controllers\pySOAPController;
 use App\Http\Controllers\creadorWSDL;
 use App\Http\Controllers\consumoRestController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,6 @@ Route::get('/crer/wsdl/ajua', [creadorWSDL::class, 'crearWSDL']);
 //Consumo REST
 Route::get('/gatos/aletorios', [consumoRestController::class, 'index'])->name('aletorios');;
 Route::get('/gatos/favoritos', [consumoRestController::class, 'favoritos'])->name('album');;
+
+//API REST 
+Route::get('/index', [PostController::class, 'index']);

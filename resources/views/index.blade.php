@@ -11,10 +11,10 @@
 			<ul class="list-group">
 				@foreach($posts as $post)
 				<li class="list-group-item">
-					<h3>Titilo: {{$post->titulo}}</h3>
+					<h3>Titulo: {{$post->titulo}}</h3>
 					<h5>Slug: {{$post->slug}}</h5>
-					<p class="fs-6">{{$post->contenido}}</p>
-					<h6>Fecha creación: {{$post->created_at}}</h6>
+					<p class="fs-6">Extracto: {{$post->Extracto}}</p>
+					<h6>Fecha creación: {{$post->FechaPublicado}}</h6>
 				</li>
 				@endforeach
 			</ul>

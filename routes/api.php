@@ -24,5 +24,7 @@ Route::apiResource('v1/posts', PostController::class);
 //->only(['index', 'show', 'destroy']);
 //http://localhost/telepuertoV1L10/public/api/v1/posts/1
 //V2
-Route::apiResource('v2/posts', PostV2::class);
+Route::apiResource('v2/posts', PostV2::class)->middleware('auth:sanctum');
+//formalario de validación 
+Route::post('login', [App\Http\Controllers\Api\LoginController::class,'login']);
 

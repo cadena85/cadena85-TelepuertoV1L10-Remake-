@@ -18,6 +18,11 @@ class PostController extends Controller
     public function index()
     {
         //return new PostCollection(Post::latest()->paginate());
+        //Si la sintaxis es la misma por que creo otra version?
+        return new PostCollection(Post::latest()->get());
+        //quiero personalizar el resulado de esa coleccion,
+        //si utilizo el metodo anterior no puedo perzonalizar el metodo 
+        //de esta colección, vamos a PostCollection ...
     }
 
     /**

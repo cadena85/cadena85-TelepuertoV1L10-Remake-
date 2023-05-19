@@ -17,9 +17,9 @@ class PostResource extends JsonResource
         //return parent::toArray($request);
         return [
             'id' => $this->id,
-            'post_name' => $this->title,
+            'post_name' => $this->titulo,
             'slug' => $this->slug,
-            'content' => $this->content,
+            'content' => $this->contenido,
             'author' => [
                 'name' => $this->user->name,//el usuario no existe hay que configurarlo en el modelo
                 'email' => $this->user->email,

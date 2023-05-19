@@ -19,13 +19,12 @@ class Post extends Model
         
     }
     public function user(){
-/*
-El método belongsTo nos permite trabajar con relaciones donde un 
-registro pertenece a otro registro. Este método acepta como primer 
-argumento el nombre de la clase que queremos vincular. 
-Eloquent determina el nombre de la llave foránea a partir del 
-nombre del método*/
-        return $this->belongsTo(user::class);
-        
+    /*
+    El método belongsTo nos permite trabajar con relaciones donde un 
+    registro pertenece a otro registro. Este método acepta como primer 
+    argumento el nombre de la clase que queremos vincular. 
+    Eloquent determina el nombre de la llave foránea a partir del 
+    nombre del método*/
+        return $this->belongsTo(user::class);        
     }
 }
